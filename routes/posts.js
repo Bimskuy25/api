@@ -67,7 +67,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-  //GET ALL POSTS
+//GET ALL POSTS
 router.get("/", async (req, res) => {
     const username = req.query.user;
     const catName = req.query.cat;
@@ -84,7 +84,7 @@ router.get("/", async (req, res) => {
         } else {
             posts = await Post.find();
         }
-        res.status(200).json(posts);
+        res.status(200).json({messege:"This is The Post", posts});
     } catch (err) {
         res.status(500).json(err);
     }
